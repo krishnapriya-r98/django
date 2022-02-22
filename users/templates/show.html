@@ -1,0 +1,40 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>User Records</title>  
+     {% load static %}  
+</head>  
+<body>  
+<table>  
+    <thead>  
+    <tr>  
+        <th>User ID</th>  
+        <th>User Name</th>  
+        <th>User Email</th>  
+        <th>User Contact</th>  
+        <th>Team ID</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for user_ in users %}  
+    <tr>  
+        <td>{{ user_.user_id }}</td>  
+        <td>{{ user_.name }}</td>  
+        <td>{{ user_.email }}</td>  
+        <td>{{ user_.phone_number }}</td>  
+        <td>{{ user_.team_id }}</td>  
+        <td>  
+            <a href="/edit/{{ user_.id }}"><span>Edit</span></a>  
+            <a href="/delete/{{ user_.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/user">Add New Record</a></center>  
+</body>  
+</html>  

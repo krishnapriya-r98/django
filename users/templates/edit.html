@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{users.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>   
+    <h3>Update Details</h3>  
+  </div>  
+    <label>User Id:</label>  
+    <div>  
+        <input type="text" name="uid" id="id_uid" required maxlength="5" value="{{users.user_id}}"/>  
+    </div>  
+  </div>  
+  <div >  
+    <label >User Name:</label>  
+    <div >  
+        <input type="text" name="uname" id="id_uname" required maxlength="100" value="{{users.name}}" />  
+    </div>  
+  </div>  
+    <div >  
+    <label >User Email:</label>  
+    <div >  
+        <input type="email" name="uemail" id="id_uemail" required maxlength="254" value="{{users.email}}" />  
+    </div>  
+  </div>  
+    <div >  
+    <label >User Contact:</label>  
+    <div >  
+        <input type="text" name="ucontact" id="id_ucontact" required maxlength="10" value="{{users.phone_number}}" />  
+    </div>  
+  </div>
+    <div >  
+    <label >Team id:</label>  
+    <div >  
+        <input type="text" name="team" id="id_teamid" required maxlength="15" value="{{users.team_id}}" />  
+    </div>  
+  </div>  
+    <div >  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div >  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
